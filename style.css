@@ -1,1 +1,432 @@
+/* VARIABLES GLOBALES Y CONFIGURACIÓN BASE*/
+:root {
+  --bg-color: #0b0e14;
+  --surface-color: #141b26;
+  --border-color: #1e293b;
+  --spidey-red: #d0202b;
+  --spidey-blue: #0055b8;
+  --spidey-glow: #ff3b47;
+  --text-main: #d1d8e0;
+  --text-heading: #f8fafc;
+  --accent-yellow: #f59e0b;
+  --font-main: 'Courier New', Courier, monospace;
+}
 
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  padding: 1rem;
+  background-image: 
+    linear-gradient(rgba(11, 14, 20, 0.75), rgba(11, 14, 20, 0.75)),
+    url('813921.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/*  ENCABEZADO Y MENÚ DE NAVEGACIÓN */
+.header-container {
+  position: relative;
+  margin-top: 50px;
+  border: 2px solid #d0202b;
+  background-color: #121926;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.header-spidey-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -85%);
+  width: 180px;
+  height: auto;
+  image-rendering: pixelated;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.main-title {
+  color: var(--text-heading);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 0px var(--spidey-blue);
+}
+
+.retro-badge {
+  display: inline-block;
+  background-color: var(--spidey-red);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--accent-yellow);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.nav-menu a {
+  color: #a0aec0;
+  text-decoration: none;
+  background-color: #0d1117;
+  border: 1px solid #1f293d;
+  padding: 8px 14px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.nav-menu a:hover {
+  color: #ffffff;
+  border-color: #d0202b;
+  background-color: #1a2332;
+}
+
+.hanging-spidey {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  width: 50px;
+  height: auto;
+  image-rendering: pixelated;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hanging-spidey.left {
+  left: 10px;
+}
+
+.hanging-spidey.right {
+  right: 10px;
+}
+
+/*CONTENEDOR Y TARJETAS GENERALES DE SECCIÓN*/
+   
+.magazine-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.content-section {
+  position: relative;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-top: 4px solid var(--spidey-red);
+}
+
+.card-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-30%, -30%);
+  width: 45px;
+  height: auto;
+  image-rendering: pixelated;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.section-title {
+  color: var(--text-heading);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/*ESTILOS DE SECCIONES ESPECÍFICAS*/
+
+/* Sección Historia*/
+.history-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.history-text {
+  flex: 1;
+}
+
+.history-media {
+  flex: 1;
+  width: 100%;
+}
+
+.history-media img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 15px rgba(208, 32, 43, 0.3);
+}
+
+/* Sección Personajes */
+.character-zigzag-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.character-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  background-color: #0d131d;
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+  border-left: 4px solid var(--spidey-red);
+  align-items: center;
+}
+
+.character-info {
+  width: 100%;
+}
+
+.character-name {
+  color: var(--accent-yellow);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.character-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.character-image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: contain; 
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #000;
+}
+
+/* Ajuste para pantallas anchas (PC / Laptop) */
+@media (min-width: 850px) {
+  .character-row {
+    grid-template-columns: 1fr 320px;
+  }
+
+  .character-row.reverse {
+    grid-template-columns: 320px 1fr;
+  }
+
+  .character-row.reverse .character-info {
+    grid-column: 2;
+  }
+
+  .character-row.reverse .character-image {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+/* Sección Gameplay */
+.gameplay-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Sección Tips y Galería de Secretos */
+.secret-box {
+  border: 1px dashed #d0202b;
+  padding: 1.5rem;
+  background-color: #0b0f17;
+  margin-top: 1.5rem;
+}
+
+.gallery-container {
+  position: relative;
+  max-width: 100%;
+  margin: 1.5rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #1f293d;
+  background-color: #000000;
+}
+
+.gallery-slides {
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain; 
+  display: block;
+  margin: 0 auto;
+}
+.caption {
+  display: block;
+  background-color: #121926;
+  color: #a0aec0;
+  font-family: monospace;
+  font-size: 0.85rem;
+  padding: 6px;
+  border-top: 1px solid #1f293d;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(18, 25, 38, 0.8);
+  color: #ffffff;
+  border: 1px solid #d0202b;
+  font-size: 1.5rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 5;
+  transition: background-color 0.2s ease;
+}
+
+.gallery-btn:hover {
+  background-color: #d0202b;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Sección Creación */
+.creation-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #1f293d;
+}
+
+.creation-logo {
+  max-width: 110px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.creation-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Sección Review */
+.review-image-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.review-image-container img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;
+}
+
+/*  Sección Fuentes y Pie de Página  */
+.citation-list {
+  list-style-type: none;
+  margin-top: 0.5rem;
+}
+
+.citation-list a {
+  color: var(--accent-yellow);
+}
+
+.magazine-footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 2px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+/* DISEÑO RESPONSIVO */
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 3.5rem;
+  }
+
+  .character-row {
+    flex-direction: row;
+  }
+
+  .character-row.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .history-grid {
+    flex-direction: row;
+  }
+}
